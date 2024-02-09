@@ -31,7 +31,6 @@
       footerList.insertBefore(li, footerList.querySelector('.item.date'));
       footerList.classList.add('mark-previous-as-read-processed');
     });
-    console.log('attached to ' + i + ' entries');
   }
 
   const init = function () {
