@@ -1,8 +1,8 @@
 'use strict';
 
 (function(){
-  const init = function () {
-    document.querySelectorAll('.flux footer > ul').forEach(footerList => {
+  const addButtonToEachUnprocessedEntry = function () {
+    document.querySelectorAll('.flux footer > ul:not(.mark-previous-as-read-processed)').forEach(footerList => {
       // Create node
       let li = document.createElement('li');
       let a = document.createElement('a');
@@ -29,6 +29,17 @@
       li.classList.add('item');
 
       footerList.insertBefore(li, footerList.querySelector('.item.date'));
+      footerList.classList.add('mark-previous-as-read-processed');
+    });
+    console.log('attached to ' + i + ' entries');
+  }
+
+  const init = function () {
+    addButtonToEachUnprocessedEntry();
+
+    // Add button to new entries when scrolling down and more content is loaded dynamically.
+    document.addEventListener('freshrss:load-more', function () {
+      addButtonToEachUnprocessedEntry();
     });
   };
 
