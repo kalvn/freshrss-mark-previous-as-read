@@ -1,0 +1,27 @@
+<?php
+	declare(strict_types=1);
+	/** @var CustomJSExtension $this */
+?>
+<form action="<?= _url('extension', 'configure', 'e', urlencode($this->getName())) ?>" method="post">
+	<input type="hidden" name="_csrf" value="<?= FreshRSS_Auth::csrfToken() ?>" />
+	<div class="form-group">
+		<label class="group-name" for="enable-warning-popup"><?= _t('ext.config.enableWarningPopup') ?></label>
+		<div class="group-controls">
+      <input type="checkbox" name="enable-warning-popup" id="enable-warning-popup" value="1" <?= FreshRSS_Context::userConf()->enable_warning_popup ? 'checked' : '' ?>>
+		</div>
+  </div>
+
+  <div class="form-group">
+    <label class="group-name" for="apply-to-all-entries-above"><?= _t('ext.config.applyToAllEntriesAbove') ?></label>
+		<div class="group-controls">
+      <input type="checkbox" name="apply-to-all-entries-above" id="apply-to-all-entries-above" value="1" <?= FreshRSS_Context::userConf()->apply_to_all_entries_above ? 'checked' : '' ?>>
+		</div>
+	</div>
+
+  <div class="form-group form-actions">
+		<div class="group-controls">
+			<button type="submit" class="btn btn-important"><?= _t('ext.config.save') ?></button>
+			<button type="reset" class="btn"><?= _t('ext.config.cancel') ?></button>
+		</div>
+	</div>
+</form>
