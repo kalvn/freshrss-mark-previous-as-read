@@ -11,5 +11,5 @@ Then, in the settings menu, select **Extensions** and enable **Mark Previous as 
 ## Configuration
 Head to `https://<your hostname>/i/?c=extension` and click on **Mark Previous as Read** settings icon.
 
-- **Show a validation popup before marking entries as read.**: shows an alert when the button is clicked, as a last chance to change your mind or cancel in case you mis-clicked.
-- **Apply only to entries that belong to the same feed.**: mark as read only entries that belong to the same feed as the one currently open.
+- **Show a validation popup before marking entries as read**: shows an alert when the button is clicked, as a last chance to change your mind or cancel in case you mis-clicked.
+- **Apply only to entries that belong to the same feed**: marks only entries that belong to the same feed as the one currently open as read.
