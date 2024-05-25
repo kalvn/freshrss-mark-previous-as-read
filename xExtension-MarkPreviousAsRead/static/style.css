@@ -7,3 +7,17 @@
 .mark-previous-as-read-to-fill {
   fill: currentColor;
 }
+
+.mark-previous-as-read-settings {
+  margin-left: 0 !important;
+}
+
+.mark-previous-as-read-settings label {
+  display: flex;
+  align-items: flex-start;
+  max-width: 500px;
+}
+
+.mark-previous-as-read-settings label input[type="checkbox"] {
+  margin-right: 10px;
+}
