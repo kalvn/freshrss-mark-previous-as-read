@@ -1,13 +1,13 @@
 <?php
   declare(strict_types=1);
-  /** @var CustomJSExtension $this */
+  /** @var MarkPreviousAsReadExtension $this */
 ?>
 <form action="<?= _url('extension', 'configure', 'e', urlencode($this->getName())) ?>" method="post">
   <input type="hidden" name="_csrf" value="<?= FreshRSS_Auth::csrfToken() ?>" />
   <div class="form-group">
     <div class="group-controls mark-previous-as-read-settings">
       <label class="checkbox" for="enable-warning-popup">
-        <input type="checkbox" name="enable-warning-popup" id="enable-warning-popup" value="1" <?= FreshRSS_Context::userConf()->enable_warning_popup ? 'checked' : '' ?>>
+        <input type="checkbox" name="enable-warning-popup" id="enable-warning-popup" value="1" <?= FreshRSS_Context::userConf()->attributeBool('enable_warning_popup') ? 'checked' : '' ?>>
         <?= _t('ext.config.enableWarningPopup') ?>
       </label>
     </div>
@@ -16,7 +16,7 @@
   <div class="form-group">
     <div class="group-controls mark-previous-as-read-settings">
       <label class="checkbox" for="apply-only-to-same-feed-entries">
-        <input type="checkbox" name="apply-only-to-same-feed-entries" id="apply-only-to-same-feed-entries" value="1" <?= FreshRSS_Context::userConf()->apply_only_to_same_feed_entries ? 'checked' : '' ?>>
+        <input type="checkbox" name="apply-only-to-same-feed-entries" id="apply-only-to-same-feed-entries" value="1" <?= FreshRSS_Context::userConf()->attributeBool('apply_only_to_same_feed_entries') ? 'checked' : '' ?>>
         <?= _t('ext.config.applyOnlyToSameFeedEntries') ?>
       </label>
     </div>
