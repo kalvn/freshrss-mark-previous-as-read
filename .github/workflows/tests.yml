@@ -1,0 +1,44 @@
+name: Automated tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  tests:
+    runs-on: ubuntu-24.04
+
+    steps:
+    - name: Git checkout FreshRSS source code
+      uses: actions/checkout@v4
+      with:
+        repository: FreshRSS/FreshRSS
+
+    - name: Git checkout source code
+      uses: actions/checkout@v4
+      with:
+        path: extensions
+
+    - name: Check PHP syntax
+      run: composer run-script php-lint
+
+    - name: Check PHTML syntax
+      run: composer run-script phtml-lint
+
+    - name: Use Composer cache
+      id: composer-cache
+      uses: actions/cache@v4
+      with:
+        path: vendor
+        key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-php-
+
+    - name: Run Composer install
+      run: composer install --prefer-dist --no-progress
+      if: steps.composer-cache.outputs.cache-hit != 'true'
+
+    - name: PHPStan
+      run: composer run-script phpstan

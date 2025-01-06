@@ -2,7 +2,10 @@
 
 class FreshExtension_markPreviousAsRead_Controller extends Minz_ActionController
 {
-  /** @var MarkPreviousAsRead\View */
+  /**
+   * @var MarkPreviousAsRead\View
+   * @phpstan-ignore property.phpDocType
+   */
   protected $view;
 
   public function jsVarsAction(): void
