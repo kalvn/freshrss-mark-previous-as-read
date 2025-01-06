@@ -1,0 +1,25 @@
+name: Automated tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Git checkout FreshRSS source code
+      uses: actions/checkout@v4
+      with:
+        repository: FreshRSS/FreshRSS
+
+    - name: Git checkout source code
+      uses: actions/checkout@v4
+      with:
+        path: extensions
+
+    - name: Run FreshRSS phpstan script
+      run: composer run-script phpstan
