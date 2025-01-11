@@ -1,9 +1,10 @@
 # Changelog
 
-## [v1.1.2](https://github.com/kalvn/freshrss-mark-previous-as-read/releases/tag/v1.1.2) - 2025-01-06
+## [v1.1.2](https://github.com/kalvn/freshrss-mark-previous-as-read/releases/tag/v1.1.2) - 2025-01-11
 ### Changed
 - Improve code organization and robustness.
 - Add automated code style check.
+
 
 ## [v1.1.1](https://github.com/kalvn/freshrss-mark-previous-as-read/releases/tag/v1.1.1) - 2024-05-25
 ### Changed
