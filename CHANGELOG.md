@@ -1,5 +1,9 @@
 # Changelog
 
+## next
+### Fixed
+- Fix the way JS variables are injected to prevent cases where some are undefined at run time.
+
 ## [v1.1.2](https://github.com/kalvn/freshrss-mark-previous-as-read/releases/tag/v1.1.2) - 2025-01-11
 ### Changed
 - Improve code organization and robustness.
