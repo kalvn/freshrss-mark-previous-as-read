@@ -5,7 +5,7 @@
   const iconCheckSvg = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"><path fill="currentColor" d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" /></svg>';
 
   function getConfig (key) {
-    return mark_previous_as_read_vars?.[key];
+    return context.extensions?.[key];
   }
 
   function t (key) {

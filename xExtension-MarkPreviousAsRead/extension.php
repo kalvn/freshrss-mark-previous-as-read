@@ -16,6 +16,7 @@ class MarkPreviousAsReadExtension extends Minz_Extension {
 
     $this->registerController('markPreviousAsRead');
     $this->registerViews();
+    $this->registerHook('js_vars', [$this, 'jsVars']);
 
     $save = false;
 
@@ -32,6 +33,23 @@ class MarkPreviousAsReadExtension extends Minz_Extension {
     if ($save) {
       FreshRSS_Context::userConf()->save();
     }
+  }
+
+  /**
+   * @return array<string, string|array<string, string>>
+   */
+  public function jsVars(): array {
+    return [
+      'enable_warning_popup' => FreshRSS_Context::userConf()->attributeBool('enable_warning_popup'),
+      'apply_only_to_same_feed_entries' => FreshRSS_Context::userConf()->attributeBool('apply_only_to_same_feed_entries'),
+      'i18n' => [
+        'markAllPreviousAsRead' => _t('ext.js.markAllPreviousAsRead'),
+        'markedEntriesAsRead' => _t('ext.js.markedEntriesAsRead'),
+        'warningSameFeed' => _t('ext.js.warningSameFeed'),
+        'theSameFeed' => _t('ext.js.theSameFeed'),
+        'warning' => _t('ext.js.warning')
+      ]
+    ];
   }
 
   public function handleConfigureAction(): void {
