@@ -14,7 +14,6 @@ class MarkPreviousAsReadExtension extends Minz_Extension {
     Minz_View::appendStyle($this->getFileUrl('style.css', 'css'));
     Minz_View::appendScript(strval(_url('markPreviousAsRead', 'jsVars')), false, true, false);
 
-    $this->registerController('markPreviousAsRead');
     $this->registerViews();
     $this->registerHook('js_vars', [$this, 'jsVars']);
 
