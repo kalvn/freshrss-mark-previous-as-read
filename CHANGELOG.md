@@ -1,8 +1,9 @@
 # Changelog
 
-## next
+## [v1.1.3](https://github.com/kalvn/freshrss-mark-previous-as-read/releases/tag/v1.1.3) - 2025-08-31
 ### Fixed
 - Fix the way JS variables are injected to prevent cases where some are undefined at run time.
+- Fix controller declaration while there was no controller anymore. Was causing error log `Controller not found!`.
 
 ## [v1.1.2](https://github.com/kalvn/freshrss-mark-previous-as-read/releases/tag/v1.1.2) - 2025-01-11
 ### Changed
