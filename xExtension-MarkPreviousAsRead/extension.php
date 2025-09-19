@@ -33,6 +33,9 @@ class MarkPreviousAsReadExtension extends Minz_Extension {
     }
   }
 
+  /**
+   * @return array<string, mixed>
+   */
   public function jsVars(array $vars): array {
     $vars['MarkPreviousAsRead'] = [
       'enable_warning_popup' => FreshRSS_Context::userConf()->attributeBool('enable_warning_popup'),
