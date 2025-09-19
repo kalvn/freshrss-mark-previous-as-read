@@ -33,23 +33,20 @@ class MarkPreviousAsReadExtension extends Minz_Extension {
     }
   }
 
-  /**
-   * @return array<string, array<string, string|bool|null|array<string, string>>>
-   */
-  public function jsVars(): array {
-    return [
-      'MarkPreviousAsRead' => [
-        'enable_warning_popup' => FreshRSS_Context::userConf()->attributeBool('enable_warning_popup'),
-        'apply_only_to_same_feed_entries' => FreshRSS_Context::userConf()->attributeBool('apply_only_to_same_feed_entries'),
-        'i18n' => [
-          'markAllPreviousAsRead' => _t('ext.js.markAllPreviousAsRead'),
-          'markedEntriesAsRead' => _t('ext.js.markedEntriesAsRead'),
-          'warningSameFeed' => _t('ext.js.warningSameFeed'),
-          'theSameFeed' => _t('ext.js.theSameFeed'),
-          'warning' => _t('ext.js.warning')
-        ]
+  public function jsVars(array $vars): array {
+    $vars['MarkPreviousAsRead'] = [
+      'enable_warning_popup' => FreshRSS_Context::userConf()->attributeBool('enable_warning_popup'),
+      'apply_only_to_same_feed_entries' => FreshRSS_Context::userConf()->attributeBool('apply_only_to_same_feed_entries'),
+      'i18n' => [
+        'markAllPreviousAsRead' => _t('ext.js.markAllPreviousAsRead'),
+        'markedEntriesAsRead' => _t('ext.js.markedEntriesAsRead'),
+        'warningSameFeed' => _t('ext.js.warningSameFeed'),
+        'theSameFeed' => _t('ext.js.theSameFeed'),
+        'warning' => _t('ext.js.warning')
       ]
     ];
+
+    return $vars;
   }
 
   public function handleConfigureAction(): void {
