@@ -34,7 +34,7 @@ class MarkPreviousAsReadExtension extends Minz_Extension {
   }
 
   /**
-   * @return array<string, string|bool|null|array<string, string>>
+   * @return array<string, array<string, string|bool|null|array<string, string>>>
    */
   public function jsVars(): array {
     return [
