@@ -7,6 +7,7 @@ declare(strict_types=1);
  * - apply-only-to-same-feed-entries
  */
 class MarkPreviousAsReadExtension extends Minz_Extension {
+  #[\Override]
   public function init(): void {
     $this->registerTranslates();
 
@@ -53,6 +54,7 @@ class MarkPreviousAsReadExtension extends Minz_Extension {
     return $vars;
   }
 
+  #[\Override]
   public function handleConfigureAction(): void {
     $this->registerTranslates();
 
