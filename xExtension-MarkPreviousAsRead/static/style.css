@@ -1,7 +1,11 @@
-.mark-previous-as-read svg {
-  margin-right: 0.25rem;
-  margin-bottom: 1px;
-  vertical-align: middle;
+.mark-previous-as-read {
+  padding-inline: 10px;
+  flex-shrink: 1 !important;
+}
+.mark-previous-as-read a {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .mark-previous-as-read-to-fill {
